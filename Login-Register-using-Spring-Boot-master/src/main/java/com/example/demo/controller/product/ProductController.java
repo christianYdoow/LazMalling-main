@@ -17,11 +17,11 @@ public class ProductController {
     private ProductServiceImpl productServiceImpl;
     @GetMapping("/product")
     public  String getAllProducts(Model model){
-//        List<Product>products=productServiceImpl.findAllProduct();
         List<Product> products = productServiceImpl.findAllProduct();
         model.addAttribute("products",products);
         return "admin/product";
     }
+
 
 
 }

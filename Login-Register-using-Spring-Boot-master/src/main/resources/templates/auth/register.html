@@ -10,73 +10,147 @@
           crossorigin="anonymous"></script>
 </head>
 
-<body class="alert alert-info">
-<div class="container d-flex flex-row align-items-center justify-content-center " style="height:100vh">
-  <form th:action="@{/register}" th:object="${user}" method="post">
-    <div class="p5 shadow p-3 mb-5 bg-body rounded">
-      <h3 class="mb-5 text-center text-uppercase">Registration</h3>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="mb-3">
-            <label class="form-label">First Name</label>
-            <input type="text" class="form-control" th:field="*{firstName}" placeholder="First Name" />
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="mb-3">
-            <label class="form-label">Last Name</label>
-            <input type="text" class="form-control" th:field="*{lastName}" placeholder="Last Name" />
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="mb-3">
-            <label class="form-label">Mobile Number</label>
-            <input type="text" class="form-control" th:field="*{mobile}" placeholder="Mobile Number" />
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="mb-3">
-            <label class="form-label">Email</label>
-            <input type="email" class="form-control" th:field="*{email}" placeholder="Email" />
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="mb-3">
-            <label class="form-label">Password</label>
-            <input type="password" class="form-control" th:field="*{password}" placeholder="Password" />
-          </div>
-        </div>
-      </div>
+<body >
+<!--<div class="container d-flex flex-row align-items-center justify-content-center " style="height:100vh">-->
+<!--  <form th:action="@{/register}" th:object="${user}" method="post">-->
+<!--    <div class="p5 shadow p-3 mb-5 bg-body rounded">-->
+<!--      <h3 class="mb-5 text-center text-uppercase">Registration</h3>-->
+<!--      <div class="row">-->
+<!--        <div class="col-md-4">-->
+<!--          <div class="mb-3">-->
+<!--            <label class="form-label">First Name</label>-->
+<!--            <input type="text" class="form-control" th:field="*{firstName}" placeholder="First Name" />-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="col-md-4">-->
+<!--          <div class="mb-3">-->
+<!--            <label class="form-label">Last Name</label>-->
+<!--            <input type="text" class="form-control" th:field="*{lastName}" placeholder="Last Name" />-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="col-md-4">-->
+<!--          <div class="mb-3">-->
+<!--            <label class="form-label">Mobile Number</label>-->
+<!--            <input type="text" class="form-control" th:field="*{mobile}" placeholder="Mobile Number" />-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="row">-->
+<!--        <div class="col-md-6">-->
+<!--          <div class="mb-3">-->
+<!--            <label class="form-label">Email</label>-->
+<!--            <input type="email" class="form-control" th:field="*{email}" placeholder="Email" />-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="col-md-6">-->
+<!--          <div class="mb-3">-->
+<!--            <label class="form-label">Password</label>-->
+<!--            <input type="password" class="form-control" th:field="*{password}" placeholder="Password" />-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
 
-      <div class="mb-3">
-        <label class="form-label">User Type</label>
-        <select class="form-select" th:field="*{role}" required>
-          <option value="">--Select User Type--</option>
-          <option value="ADMIN">ADMIN</option>
-          <option value="USER">USER</option>
-        </select>
-      </div>
-      <div class="d-grid gap-2 mt-5">
-        <button class="btn btn-primary" type="submit">Register</button>
-        <a th:href="@{/login}" th:text="'Log in'" class="btn btn-outline-secondary mt-1">Log In</a>
-      </div>
+<!--      <div class="mb-3">-->
+<!--        <label class="form-label">User Type</label>-->
+<!--        <select class="form-select" th:field="*{role}" required>-->
+<!--          <option value="">&#45;&#45;Select User Type&#45;&#45;</option>-->
+<!--          <option value="ADMIN">SELLER</option>-->
+<!--          <option value="USER">BUYER</option>-->
+<!--        </select>-->
+<!--      </div>-->
+<!--      <div class="d-grid gap-2 mt-5">-->
+<!--        <button class="btn btn-primary" type="submit">Register</button>-->
+<!--        <a th:href="@{/login}" th:text="'Log in'" class="btn btn-outline-secondary mt-1">Log In</a>-->
+<!--      </div>-->
 
-      <div class="text-center alert alert-success mt-5"><span th:utext="${successMessage}"></span></div>
+<!--      <div class="text-center alert alert-success mt-5"><span th:utext="${successMessage}"></span></div>-->
 
-      <div th:if="${bindingResult!=null && bindingResult.getAllErrors()!=null}"
-           class="text-center alert alert-danger mt-5">
-        <ul style="list-style-type: none;" th:each="data : ${bindingResult.getAllErrors()}">
-          <li style="list-style-type: none;"
-              th:text="${data.getObjectName() + ' :: ' + data.getDefaultMessage()}"></li>
-        </ul>
+<!--      <div th:if="${bindingResult!=null && bindingResult.getAllErrors()!=null}"-->
+<!--           class="text-center alert alert-danger mt-5">-->
+<!--        <ul style="list-style-type: none;" th:each="data : ${bindingResult.getAllErrors()}">-->
+<!--          <li style="list-style-type: none;"-->
+<!--              th:text="${data.getObjectName() + ' :: ' + data.getDefaultMessage()}"></li>-->
+<!--        </ul>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--  </form>-->
+<!--</div>-->
+
+<div class="container-fluid text-center">
+  <section class="vh-100">
+    <div class="container py-5 h-100">
+      <div class="row d-flex align-items-center justify-content-center h-100">
+        <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+          <form th:action="@{/register}" th:object="${user}" method="post">
+            <div class="p5 shadow p-3 mb-5 bg-body rounded">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="mb-3">
+                    <input type="text" class="form-control" th:field="*{firstName}" placeholder="First Name" />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="mb-3">
+                    <input type="text" class="form-control" th:field="*{lastName}" placeholder="Last Name" />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="mb-3">
+                    <input type="text" class="form-control" th:field="*{mobile}" placeholder="Mobile Number" />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <input type="email" class="form-control" th:field="*{email}" placeholder="Email" />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <input type="password" class="form-control" th:field="*{password}" placeholder="Password" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <select class="form-select" th:field="*{role}" required>
+                  <option value="">--Select User Type--</option>
+                  <option value="ADMIN">SELLER</option>
+                  <option value="USER">BUYER</option>
+                </select>
+              </div>
+              <div class="d-grid gap-2 mt-5">
+                <button class="btn btn-primary" type="submit">Register</button>
+                <a th:href="@{/login}" th:text="'Log in'" class="btn btn-outline-secondary mt-1">Log In</a>
+              </div>
+
+              <div class="text-center alert alert-success mt-5"><span th:utext="${successMessage}"></span></div>
+
+              <div th:if="${bindingResult!=null && bindingResult.getAllErrors()!=null}"
+                   class="text-center alert alert-danger mt-5">
+                <ul style="list-style-type: none;" th:each="data : ${bindingResult.getAllErrors()}">
+                  <li style="list-style-type: none;"
+                      th:text="${data.getObjectName() + ' :: ' + data.getDefaultMessage()}"></li>
+                </ul>
+              </div>
+            </div>
+
+          </form>
+        </div>
+        <div class="col-md-8 col-lg-7 col-xl-6">
+          <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4">REGISTRATION FORM</p>
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+               class="img-fluid" alt="Sample image">
+        </div>
       </div>
     </div>
-
-  </form>
+  </section>
 </div>
 
+
+</body>
 </body>
 
 </html>
