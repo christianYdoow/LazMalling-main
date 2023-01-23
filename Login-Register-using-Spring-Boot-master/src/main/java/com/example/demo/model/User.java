@@ -109,6 +109,12 @@ public class User implements UserDetails  {
         return enabled;
     }
 
+    public Long getId(){ return id;}
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public Role getRole() { return role; }
 
     public void setRole(com.example.demo.model.Role role) {
